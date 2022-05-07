@@ -6,6 +6,7 @@ const path = require('path');
 const express =  require("express");
 const app = express();
 const hbs=require('hbs');
+const port = process.env.PORT || 3000;
 //console.log(path.join(__dirname,"../templates"));
 const template = path.join(__dirname,"/template/views");
 const partialPath = path.join(__dirname,"/template/partial");
@@ -47,6 +48,6 @@ app.get("*",(req,res)=>{
         errormsg:"SOORY currely we dont have this file",
     });
 });
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("listening at 3000");
 })
